@@ -1,0 +1,170 @@
+/* 전체 레이아웃 설정 */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0caff;
+    position: relative;
+    /* 이미지 배치를 위해 relative 설정 */
+}
+
+h2 {
+    color:white;
+}
+
+/* 로그인 박스 크기 및 배경 스타일 */
+.login-box {
+    background: linear-gradient(135deg, #b292ff, #9d61ff);
+    border-radius: 20px;
+    padding: 40px;
+    width: 340px;
+    /* 더 좁게 설정 */
+    text-align: center;
+    position: relative;
+    /* 이미지 배치를 위해 relative 설정 */
+}
+
+
+.logo-box {
+ width:100%;
+ height:170px;
+}
+
+/* 왼쪽 상단 캐릭터 로고 */
+.left-logo {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    width: 150px;
+    /* 크기 조정 */
+    height: auto;
+}
+
+/* 오른쪽 상단 텍스트 로고 */
+.right-logo1 {
+    position: absolute;
+    top:50px;
+    right: 0px;
+    width: 250px;
+    /* 크기 조정 */
+    height: auto;
+}
+
+.right-logo2 {
+    position: absolute;
+        top: 150px;
+        right: 80px;
+        width: 125px;
+        height: auto;
+        transform: rotate(-7deg);
+        /* 오른쪽으로 10도 기울임 */
+}
+
+
+/* 입력 필드 스타일 */
+.input-box {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+
+.input-box::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+/* * 색깔주석 */ 
+/* * */
+ /* ? */
+ /* ! */
+/* todo */
+
+/* 버튼 스타일 */ 
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    color: #9d61ff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #f2f2f2;
+    /* 약간 어두운 배경 */
+}
+
+/* 카카오 로그인 버튼 스타일 */
+.kakao-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    padding: 4px;
+    margin: 0 auto;
+    background-color: #fee500;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+}
+
+
+.kakao-login:hover {
+    background-color: #f2f2f2;
+    /* 약간 어두운 배경 */
+}
+
+/* 카카오 로고 스타일 */
+.kakao-logo {
+    width: 30px;
+    /* 로고 크기 */
+    height: 30px;
+    /* 로고 높이 설정 */
+    margin-right: 10px;
+    /* 텍스트와의 간격 */
+}
+
+/* 카카오 로그인 텍스트 */
+.kakao-login-text {
+    color: black;
+
+    text-align: center;
+}
+
+/* 회원가입 버튼 */
+.signup-btn {
+    width: 90%;
+    /* 회원가입 버튼 가로 크기 */
+    padding: 10px;
+    background-color: white;
+    color: #9d61ff;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    background-color: #f2f2f2;
+    /* 약간 어두운 배경 */
+}
+
+/* 하단 텍스트 스타일 */
+.forgot-password {
+    color: white;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    text-align: center;
+}

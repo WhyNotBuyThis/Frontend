@@ -1,0 +1,86 @@
+/* 전체 레이아웃 설정 */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0caff;
+    /* 보라 계열 배경 */
+    position: relative;
+}
+
+h2 {
+    color: white;
+}
+
+/* 로그인 박스 크기 및 배경 스타일 */
+.login-box {
+    background: linear-gradient(135deg, #b292ff, #9d61ff);
+    /* 보라 계열 그라디언트 */
+    border-radius: 20px;
+    padding: 40px;
+    width: 340px;
+    text-align: center;
+    position: relative;
+}
+
+/* 입력 필드 스타일 */
+.input-box {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.input-box::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 회원가입 완료 버튼 스타일 */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    color: #9d61ff;
+    /* 보라색 글씨 */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background-color: #f2f2f2;
+    /* 약간 어두운 배경 */
+}
+
+/* 로그인 이동 버튼 스타일 */
+.signup-btn {
+    width: 90%;
+    padding: 10px;
+    background-color: white;
+    color: #9d61ff;
+    /* 보라색 글씨 */
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    background-color: #f2f2f2;
+}
+
+/* 하단 텍스트 스타일 */
+.forgot-password {
+    color: white;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    text-align: center;
+}

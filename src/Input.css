@@ -1,0 +1,7 @@
+/* 성공 메시지 스타일 */
+.success-message {
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
