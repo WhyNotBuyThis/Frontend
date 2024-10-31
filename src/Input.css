@@ -1,7 +1,114 @@
-/* 성공 메시지 스타일 */
-.success-message {
-    color: black;
-    font-size: 2rem;
-    font-weight: bold;
+/* 전체 레이아웃 설정 */
+.input-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0caff;
+    position: relative;
+}
+
+.input-box1 {
+    background: linear-gradient(135deg, #b292ff, #9d61ff);
+    border-radius: 20px;
+    padding: 40px;
+    width: 340px;
+    text-align: center;
+    position: relative;
+}
+
+.input-box1 h2 {
+    color: white;
+    font-size: 1.5rem;
     margin-bottom: 20px;
+}
+
+/* 입력 필드 및 라벨 스타일 */
+.input-label {
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    display: block;
+    text-align: left;
+        font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 성별 선택 스타일 */
+.input-gender-options {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0 20px;
+    align-items: center;
+}
+
+.input-gender-label {
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+        font-family: 'Noto Sans KR', sans-serif;
+}
+
+.input-radio {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* 나이 선택 스타일 */
+.input-age-select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+    appearance: none;
+    text-align: center;
+        font-family: 'Noto Sans KR', sans-serif;
+}
+
+.input-age-select option {
+    color: black;
+}
+
+/* 가격대 입력 필드 스타일 */
+.input-price-input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.input-price-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 추천 받기 버튼 스타일 */
+.input-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    color: #9d61ff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+        font-family: 'Noto Sans KR', sans-serif;
+}
+
+.input-submit-btn:hover {
+    background-color: #f2f2f2;
 }
