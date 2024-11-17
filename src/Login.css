@@ -11,6 +11,7 @@
 
 h2 {
     color:white;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 로그인 박스 크기 및 배경 스타일 */
@@ -55,7 +56,7 @@ h2 {
     position: absolute;
         top: 150px;
         right: 80px;
-        width: 125px;
+        width: 130px;
         height: auto;
         transform: rotate(-7deg);
         /* 오른쪽으로 10도 기울임 */

@@ -50,7 +50,7 @@ function Login() {
           <img src={rightLogo1} alt="right logo 1" className="right-logo1" />
           <img src={rightLogo2} alt="right logo 2" className="right-logo2" />
         </div>
-        <h2>가격대별 제품 서비스 추천</h2>
+        <h2>맞춤형 선물 추천 서비스</h2>
         <form onSubmit={handleLogin}>
           <input
             type="text"

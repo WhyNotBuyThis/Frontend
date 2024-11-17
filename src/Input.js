@@ -26,6 +26,23 @@ function Input() {
       <div className="input-box1">
         <h2>정보를 줄래?</h2>
         <form onSubmit={handleSubmit}>
+
+          <label className="input-label">선물 목적</label>
+          <select
+            className="input-age-select"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+          >
+            <option value="">선물 목적을 알려주세요</option>
+            <option value="친구생일">친구생일</option>
+            <option value="커플기념일">커플기념일</option>
+            <option value="가족생일">가족 생일</option>
+            <option value="집들이">집들이</option>
+            <option value="시험합격">시험합격</option>
+            <option value="입사축하">입사축하</option>
+            <option value="고백">고백</option>
+          </select>
+
           <label className="input-label">성별</label>
           <div className="input-gender-options">
             <label className="input-gender-label">
