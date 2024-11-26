@@ -32,7 +32,7 @@ function Input() {
 
     try {
       // 백엔드에 요청 보내기
-      const response = await fetch('http://your-backend-endpoint.com/recommend', {
+      const response = await fetch('http://localhost:8000/recommend', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
