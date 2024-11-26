@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // React Router의 useNavigate 훅
 import './Input.css';
 
 function Input() {
   const [gender, setGender] = useState('');
   const [age, setAge] = useState('');
   const [priceRange, setPriceRange] = useState('');
+  const [gift, setGift] = useState(''); // 추가된 선물 목적
+  const navigate = useNavigate(); // 페이지 이동을 위한 useNavigate 훅
 
   const handlePriceChange = (e) => {
     const value = e.target.value.replace(/[^0-9]/g, ''); // 숫자만 남기기
@@ -16,9 +19,36 @@ function Input() {
     return Number(value).toLocaleString() + ' 원';
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log({ gender, age, priceRange });
+
+    // 서버로 보낼 Request Body 생성
+    const requestBody = {
+      age: age, // 나이
+      gender: gender === '남성' ? 'MALE' : 'FEMALE', // 성별
+      itemPrice: parseInt(priceRange, 10), // 가격대 숫자로 변환
+      gift: gift, // 선물 목적
+    };
+
+    try {
+      // 백엔드에 요청 보내기
+      const response = await fetch('http://your-backend-endpoint.com/recommend', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      if (!response.ok) {
+        throw new Error('백엔드 요청 실패!');
+      }
+
+      const data = await response.json(); // 응답 데이터
+      navigate('/recommend', { state: { recommendations: data } }); // Recommend로 데이터 전달
+    } catch (error) {
+      console.error('Error fetching recommendations:', error);
+    }
   };
 
   return (
@@ -26,21 +56,20 @@ function Input() {
       <div className="input-box1">
         <h2>정보를 줄래?</h2>
         <form onSubmit={handleSubmit}>
-
           <label className="input-label">선물 목적</label>
           <select
             className="input-age-select"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
+            value={gift}
+            onChange={(e) => setGift(e.target.value)}
           >
             <option value="">선물 목적을 알려주세요</option>
-            <option value="친구생일">친구생일</option>
-            <option value="커플기념일">커플기념일</option>
-            <option value="가족생일">가족 생일</option>
-            <option value="집들이">집들이</option>
-            <option value="시험합격">시험합격</option>
-            <option value="입사축하">입사축하</option>
-            <option value="고백">고백</option>
+            <option value="APPRECIATION">친구생일</option>
+            <option value="ANNIVERSARY">커플기념일</option>
+            <option value="BIRTHDAY">가족 생일</option>
+            <option value="HOUSEWARMING">집들이</option>
+            <option value="CONGRATULATIONS">시험합격</option>
+            <option value="JOB_CELEBRATION">입사축하</option>
+            <option value="CONFESSION">고백</option>
           </select>
 
           <label className="input-label">성별</label>
@@ -74,16 +103,16 @@ function Input() {
             onChange={(e) => setAge(e.target.value)}
           >
             <option value="">나이를 선택하세요</option>
-            <option value="10대 초반">10대 초반</option>
-            <option value="10대 중반">10대 중반</option>
-            <option value="10대 후반">10대 후반</option>
-            <option value="20대 초반">20대 초반</option>
-            <option value="20대 중반">20대 중반</option>
-            <option value="20대 후반">20대 후반</option>
-            <option value="30대 초반">30대 초반</option>
-            <option value="30대 중반">30대 중반</option>
-            <option value="30대 후반">30대 후반</option>
-            <option value="40대 이상">40대 이상</option>
+            <option value="EARLY_TEENS">10대 초반</option>
+            <option value="MID_TEENS">10대 중반</option>
+            <option value="LATE_TEENS">10대 후반</option>
+            <option value="EARLY_TWENTIES">20대 초반</option>
+            <option value="MID_TWENTIES">20대 중반</option>
+            <option value="LATE_TWENTIES">20대 후반</option>
+            <option value="EARLY_THIRTIES">30대 초반</option>
+            <option value="MID_THIRTIES">30대 중반</option>
+            <option value="LATE_THIRTIES">30대 후반</option>
+            <option value="FORTIES_AND_ABOVE">40대 이상</option>
           </select>
 
           <label className="input-label">가격대</label>
