@@ -18,21 +18,28 @@ function Login() {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8000/user/login', {
+      const response = await fetch('http://localhost:8080/user/login', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           userEmail: email,
-          userPw: password
-        })
+          userPw: password,
+        }),
       });
 
       const data = await response.json();
 
       if (response.ok && data.success) {
         setError('');
+        
+        // Authorization 값 로컬 스토리지에 저장
+        const authToken = response.headers.get('Authorization');
+        if (authToken) {
+          localStorage.setItem('authToken', authToken);
+        }
+
         navigate('/input'); // 로그인 성공 시 Input 페이지로 이동
       } else {
         setError(data.message || '로그인에 실패했습니다. 다시 시도해주세요.');

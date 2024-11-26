@@ -58,7 +58,7 @@ function Recommend() {
           ))}
         </div>
         {/* 돌아가기 버튼 추가 */}
-        <button className="recommend-back-button" onClick={() => navigate('http://localhost:8000/Input')}>
+        <button className="recommend-back-button" onClick={() => navigate('/Input')}>
           돌아가기
         </button>
       </div>

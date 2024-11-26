@@ -31,11 +31,15 @@ function Input() {
     };
 
     try {
+      // 로컬 스토리지에서 Authorization 토큰 가져오기
+      const authToken = localStorage.getItem('authToken');
+
       // 백엔드에 요청 보내기
-      const response = await fetch('http://localhost:8000/recommend', {
+      const response = await fetch('http://localhost:8080/recommend', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${authToken}`, // Authorization 헤더 추가
         },
         body: JSON.stringify(requestBody),
       });
